@@ -2,13 +2,13 @@ from flask import Flask, render_template, request
 
 from logic import get_diff
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="templates")
 
 
 @app.route('/')
 # ‘/’ URL is bound with hello_world() function.
-def hello_world():
-    return render_template("home.html")
+def fill_json():
+    return render_template("fill_json.html")
 
 
 @app.route('/compare', methods=['POST'])
